@@ -1,0 +1,13 @@
+﻿Build started 17/03/2015 20:24:49.
+     1>Project "C:\Users\Frank\documents\visual studio 2013\Projects\OpenGL\OpenGL\OpenGL.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I/glut /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D FREEGLUT_STATIC /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\OpenGL.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I/glut /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D FREEGLUT_STATIC /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\OpenGL.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt "..\..\..\..\..\Desktop\Informatica Grafica\materiali\materiali\Materiali_04_Fondamenti_OpenGL\GLRect\GLRect.c"
+         GLRect.c
+     1>c:\users\frank\desktop\informatica grafica\materiali\materiali\materiali_04_fondamenti_opengl\glrect\glrect.c : fatal error C1853: 'Debug\OpenGL.pch' precompiled header file is from a previous version of the compiler, or the precompiled header is C++ and you are using it from C (or vice versa)
+     1>Done Building Project "C:\Users\Frank\documents\visual studio 2013\Projects\OpenGL\OpenGL\OpenGL.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.60

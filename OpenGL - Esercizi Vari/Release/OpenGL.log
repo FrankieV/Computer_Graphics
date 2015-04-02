@@ -1,0 +1,14 @@
+﻿Build started 20/03/2015 22:25:43.
+     1>Project "C:\Users\Frank\documents\visual studio 2013\Projects\OpenGL\OpenGL\OpenGL.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Frank\documents\visual studio 2013\Projects\OpenGL\Release\OpenGL.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:/glut glut32.lib glu32.lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Frank\documents\visual studio 2013\Projects\OpenGL\Release\OpenGL.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Frank\documents\visual studio 2013\Projects\OpenGL\Release\OpenGL.lib" /MACHINE:X86 /SAFESEH Release\planet.obj
+         Release\stdafx.obj
+     1>LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+         Generating code
+         Finished generating code
+         OpenGL.vcxproj -> C:\Users\Frank\documents\visual studio 2013\Projects\OpenGL\Release\OpenGL.exe
+     1>Done Building Project "C:\Users\Frank\documents\visual studio 2013\Projects\OpenGL\OpenGL\OpenGL.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.76
