@@ -61,15 +61,16 @@ void display(void)
 	glPushMatrix();
 	glRotatef(around_x, 0.0, 1.0,0.0);
 	gluLookAt(-2.0,0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
-	glColor4f(0.25, 0.25, 0.25,0.3);
+	glColor4f(0.25, 0.25, 0.25,1.0f);
 	glutWireCube(2*l);
-	glColor4f(1.0, 1.0, 0.0, 0.2f);
-	glutWireCube(l);
+	glColor4f(1.0, 1.0, 0.0, 0.5f);
+	glDisable(GL_DEPTH_TEST);
+	glutSolidCube(l);
 	glPopMatrix();
 
-	glPushMatrix();
+	glEnable(GL_DEPTH_TEST);
 
-	
+	glPushMatrix();
 	// Translate origin to move the cone out to where the light
 	// is positioned.
 	glPushMatrix();
@@ -87,7 +88,7 @@ void display(void)
 	glutSolidSphere(3.0f, 15, 15);
 	glPopMatrix();
 
-	glPushMatrix();
+	
 	glBegin(GL_LINE_LOOP);
 	for (int i = 0; i < 100; i++)
 	{
@@ -113,7 +114,7 @@ void display(void)
 		glPopMatrix();
 	}
 	glEnd();
-	glPopMatrix();
+	
 	glutSwapBuffers();
 
 	
