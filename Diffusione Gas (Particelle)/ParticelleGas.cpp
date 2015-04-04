@@ -13,32 +13,31 @@ GLfloat l = 60.0; GLint num_particelle = 50; GLfloat x = 2.0, y = 1.0; GLfloat a
 GLfloat num_rand_y = 0.0; GLfloat num_rand_x = 0.0; bool espandi_particelle = true;
 GLfloat vector_x[100], vector_y[100];
 
-GLfloat	 lightPos[] = { 0.0f, 0.0f, 75.0f, 1.0f };
+GLfloat	 lightPos[] = { 0.0f, 1.0f, 50.0f, 1.0f };
 GLfloat  specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 GLfloat  specref[] = { 1.0f, 1.0f, 1.0f, 1.0f };
-GLfloat  ambientLight[] = { 0.5f, 0.5f, 0.5f, 1.0f };
+GLfloat  ambientLight[] = { 0.25f, 0.25f, 0.25f, 0.0f };
 GLfloat  spotDir[] = { 0.0f, 0.0f, -1.0f };
 
 void init(void)
 {
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	glEnable(GL_LIGHTING);
 	glEnable(GL_CULL_FACE);
 	glEnable(GL_DEPTH_TEST);
+	
 	CreaParticelle();
-	
-	//glEnable(GL_DEPTH);
-	
-	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientLight);
 
+	glEnable(GL_LIGHTING);
 	glEnable(GL_COLOR_MATERIAL);
-	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+	
 
-	glMaterialfv(GL_FRONT, GL_SPECULAR, specref);
-	glMateriali(GL_FRONT, GL_SHININESS,10);
-
+	glLightfv(GL_LIGHT0, GL_AMBIENT, ambientLight);
+	glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
+	glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
 	glEnable(GL_LIGHT0);
+
+	glColorMaterial(GL_FRONT, GL_AMBIENT);
 
 
 	glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -57,12 +56,12 @@ void CreaParticelle()
 
 void display(void)
 {
-	glClear(GL_COLOR_BUFFER_BIT);
-	glClear(GL_DEPTH_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 	glPushMatrix();
 	glRotatef(around_x, 0.0, 1.0,0.0);
-	gluLookAt(1.0,1.0, 0.0, 0.0, 4.0, 0.0, 0.0, 0.0, 1.0);
-	glColor4f(1.0, 1.0, 1.0,0.3);
+	gluLookAt(-2.0,0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+	glColor4f(0.25, 0.25, 0.25,0.3);
 	glutWireCube(2*l);
 	glColor4f(1.0, 1.0, 0.0, 0.2f);
 	glutWireCube(l);
@@ -70,35 +69,22 @@ void display(void)
 
 	glPushMatrix();
 
-	//glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
-	//glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, spotDir);
-
-
-	// Draw a red cone to enclose the light source
-	glColor3ub(255, 0, 0);
-
+	
 	// Translate origin to move the cone out to where the light
 	// is positioned.
 	glPushMatrix();
+	glColor3f(1.0, 0.0, 0.0);
 	glRotatef(light_rotate, 0.0, 1.0, 0.0);
+	glLightfv(GL_LIGHT0, GL_POSITION, lightPos); 
 	glTranslatef(0.0, 0.0, 70.0);
 	glutSolidCone(4.0f, 6.0f, 15, 15);
 	glPopMatrix();
 
-	// Draw a smaller displaced sphere to denote the light bulb
-	// Save the lighting state variables
-	glPushAttrib(GL_LIGHTING_BIT);
-
-	// Turn off lighting and specify a bright yellow sphere
-	glDisable(GL_LIGHTING);
-	glColor3ub(255, 255, 0);
+	glPushMatrix();
+	glColor3f(1.0, 1.0, 0.0);
 	glRotatef(light_rotate, 0.0, 1.0, 0.0);
 	glTranslatef(0.0, 0.0, 70.0);
-	
 	glutSolidSphere(3.0f, 15, 15);
-
-	// Restore lighting state variables
-	glPopAttrib();
 	glPopMatrix();
 
 	glPushMatrix();
@@ -180,7 +166,8 @@ void keyboard(unsigned char key, int x, int y)
 	}
 	else if (key == 'b')
 	{
-		light_rotate += 5 % 360;
+		light_rotate += 5;
+		//lightPos[0]+=5;
 		glutPostRedisplay();
 	}
 	else if (key == 'x')
