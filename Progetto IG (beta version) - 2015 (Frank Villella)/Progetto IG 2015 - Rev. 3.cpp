@@ -836,32 +836,32 @@ void disegnaStanza()
 	glTexCoord2f(0.0f, 0.0f); 
 	glVertex3f(2.0f, -2.0f, -2.0f);    
 	glTexCoord2f(1.0f, 0.0f); /*  */
-	glVertex3f(-2.0f, -2.0f, -2.0f);    // Top Left Of The Quad (Back)
+	glVertex3f(-2.0f, -2.0f, -2.0f);   
 	glTexCoord2f(1.0f, 1.0f); 
-	glVertex3f(-2.0f, 2.0f, -2.0f);    // Bottom Left Of The Quad (Back)
+	glVertex3f(-2.0f, 2.0f, -2.0f);   
 	glTexCoord2f(0.0f, 1.0f); 
-	glVertex3f(2.0f, 2.0f, -2.0f);    // Bottom Right Of The Quad (Back)
+	glVertex3f(2.0f, 2.0f, -2.0f);    
 
 	glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
 	glTexCoord2f(0.0f, 0.0f); 
-	glVertex3f(-2.0f, 2.0f, 2.0f);    // Top Right Of The Quad (Left)
-	glTexCoord2f(1.0f, 0.0f); /*  */
-	glVertex3f(-2.0f, 2.0f, -2.0f);    // Top Left Of The Quad (Left)
+	glVertex3f(-2.0f, 2.0f, 2.0f);    
+	glTexCoord2f(1.0f, 0.0f);
+	glVertex3f(-2.0f, 2.0f, -2.0f);    
 	glTexCoord2f(1.0f, 1.0f); 
-	glVertex3f(-2.0f, -2.0f, -2.0f);    // Bottom Left Of The Quad (Left)
+	glVertex3f(-2.0f, -2.0f, -2.0f);    
 	glTexCoord2f(0.0f, 1.0f); 
-	glVertex3f(-2.0f, -2.0f, 2.0f);    // Bottom Right Of The Quad (Left)
+	glVertex3f(-2.0f, -2.0f, 2.0f);    
 
 	glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
 	glTexCoord2f(0.0f, 0.0f); 
-	glVertex3f(2.0f, 2.0f, -2.0f);    // Top Right Of The Quad (Right)
-	glTexCoord2f(1.0f, 0.0f); /*  */
-	glVertex3f(2.0f, 2.0f, 2.0f);    // Top Left Of The Quad (Right)
+	glVertex3f(2.0f, 2.0f, -2.0f);   
+	glTexCoord2f(1.0f, 0.0f);
+	glVertex3f(2.0f, 2.0f, 2.0f);    
 	glTexCoord2f(1.0f, 1.0f); 
-	glVertex3f(2.0f, -2.0f, 2.0f);    // Bottom Left Of The Quad (Right)
+	glVertex3f(2.0f, -2.0f, 2.0f);    
 	glTexCoord2f(0.0f, 1.0f); 
-	glVertex3f(2.0f, -2.0f, -2.0f);    // Bottom Right Of The Quad (Right)
-	glEnd();            // End Drawing The Cube 
+	glVertex3f(2.0f, -2.0f, -2.0f);    
+	glEnd();         
 	glPopMatrix();
 
 
